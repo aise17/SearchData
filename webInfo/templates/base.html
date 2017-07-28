@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>base</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Control Panel</a>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/client">Client</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/engine">Engien <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/file_query">File query</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/file_result">File results</a>
+      </li>
+	</ul>
+	</div>
+  
+
+
+
+
+    <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Welcome {{User}} <span class="sr-only">(current)</span></a>
+      </li>
+
+	</ul>
+	</div>
+
+
+
+
+    <ul class="navbar-nav nav justify-content-end">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Register <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Loging <span class="sr-only">(current)</span></a>
+      </li>
+            <li class="nav-item active">
+        <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
+      </li>
+	</ul>
+	</div>
+
+
+
+	
+</nav>
+
+{%block client%} 
+{%endblock%}
+
+{%block engine%}  
+{%endblock%}
+
+{%block file_query%} 
+{%endblock%}
+
+{%block file_result%} 
+{%endblock%}
+
+{%block forms%} 
+{%endblock%}
+
+{%block engine_detail%}
+{%endblock%}
+
+{%block client_detail%}
+{%endblock%}
+
+{%block filequery_detail%}
+{%endblock%}
+
+{%block fileresult_detail%}
+{%endblock%}
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>

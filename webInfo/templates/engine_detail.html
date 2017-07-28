@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{%block engine_detail%}
+
+
+ {% if engine_detail %}
+
+
+<div class="card" style="width: 20rem;">
+  <div class="card-block">
+    <h4 class="card-title">{{engine_detail.name}}</h4>
+    <p class="card-text">descripcion del engine {{engine_detail.pk}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{engine_detail.name}}</li>
+    <li class="list-group-item">{{engine_detail.client}}</li>
+    <li class="list-group-item">{{engine_detail.start_date}}</li>
+  </ul>
+  <div class="card-block">
+    <a href="#" class="btn btn-primary">edit</a>
+    <a href="/delete_engine/{{engine_detail.pk}}" class="btn btn-primary">delte</a>
+  </div>
+</div>
+
+
+
+ {%else%}
+
+<p>no hay resultados</p>
+
+{%endif%}
+
+{% endblock %}
+

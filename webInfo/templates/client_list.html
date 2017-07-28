@@ -1,0 +1,48 @@
+
+
+{% extends 'base.html'%}
+
+{%block client%}
+
+
+
+
+
+<div class="col">
+  <a href="#" class="list-group-item active">
+    Client's
+  </a>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre </th>
+      <th>Company</th>
+      <th>Mail</th>
+      <th>Contact Number</th>
+      <th colspan="2"><a href="/get_client" class="btn btn-primary">+ add</a></th>
+    </tr>
+  </thead>
+{%for client in clients%}
+  <tbody>
+    <tr>
+      <td>{{client.name}}</td>
+      <td>{{ client.company }}</a></td>
+      <td>{{client.mail}}</td></a>
+      <td>{{client.contact_number}}</td></a>
+      <td><a href="#" class="btn btn-primary">detail</a></td>
+      <td><a href="#" class="btn btn-primary">edit</a></td>
+      <td><a href="/delete_client/{{client.pk}}" class="btn btn-primary">delte</a></td>
+    </tr>
+
+  </tbody>
+
+
+{% empty %}
+	<li>No engine yet.</li>
+{%endfor%}
+</table>
+</div>
+
+{% endblock %}
+

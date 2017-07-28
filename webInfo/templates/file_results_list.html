@@ -1,0 +1,49 @@
+
+
+{% extends 'base.html'%}
+
+{%block file_result%}
+
+
+
+
+
+<div class="col">
+  <a href="#" class="list-group-item active">
+    Files Results
+  </a>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre </th>
+      <th>Engine</th>
+      <th>File Style</th>
+      <th>File </th>
+      <th>Start Date</th>
+    </tr>
+  </thead>
+{%for file_result in file_results%}
+  <tbody>
+    <tr>
+      <td>{{file_result.name}}</td>
+      <td>{{ file_result.engine }}</a></td>
+      <td>{{file_result.file_style}}</td></a>
+      <td>{{file_result.file}}</td></a>
+      <td>{{file_result.start_date}}</td></a>
+      <td><a href="#" class="btn btn-primary">detail</a></td>
+      <td><a href="#" class="btn btn-primary">edit</a></td>
+      <td><a href="#" class="btn btn-primary">delte</a></td>
+    </tr>
+
+  </tbody>
+
+
+{% empty %}
+	<li>No engine yet.</li>
+{%endfor%}
+</table>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,48 @@
+
+
+{% extends 'base.html'%}
+
+{%block file_query%}
+
+
+
+
+
+<div class="col">
+  <a href="#" class="list-group-item active">
+    Files Queries
+  </a>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre </th>
+      <th>Engine</th>
+      <th>File Style</th>
+      <th>File </th>
+      <th colspan="2"><a href="/get_file_query" class="btn btn-primary">+ add</a></th>
+    </tr>
+  </thead>
+{%for file_query in file_queries%}
+  <tbody>
+    <tr>
+      <td>{{file_query.name}}</td>
+      <td>{{ file_query.engine }}</a></td>
+      <td>{{file_query.file_style}}</td></a>
+      <td><a href="/{{file_query.file.name}}">{{file_query.file}}</td></a>
+      <td><a href="#" class="btn btn-primary">detail</a></td>
+      <td><a href="#" class="btn btn-primary">edit</a></td>
+      <td><a href="/delete_filequery/{{file_query.pk}}" class="btn btn-primary">delte</a></td>
+    </tr>
+
+  </tbody>
+
+
+{% empty %}
+	<li>No engine yet.</li>
+{%endfor%}
+</table>
+</div>
+
+{% endblock %}
+
