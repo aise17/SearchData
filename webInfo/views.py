@@ -7,7 +7,7 @@ from webInfo.forms import ClientForm, EngineForm, FileQueryForm, FileResultsForm
 from django.http import HttpResponseRedirect
 
 
-
+from django.shortcuts import redirect, get_object_or_404
 
 # Create your views here.
 '''TASK
@@ -144,13 +144,62 @@ def get_file_query(request):
 	return render(request, 'engine_form.html', {'form': form})
 
 def get_file_result(request):
-    if request.method == 'POST':
-        form = FileResultsForm(request.POST)
-        if form.is_valid():
-            return HttpResponseRedirect('/file_results')
-    else:
-        form = FileResultsForm()
+	if request.method == 'POST':
+		form = FileResultsForm(request.POST)
+		if form.is_valid():
+			return HttpResponseRedirect('/file_results')
+	else:
+		form = FileResultsForm()
 
-    return render(request, 'engine_form.html', {'form': form})
+	return render(request, 'engine_form.html', {'form': form})
 
+
+
+
+
+
+
+
+
+
+
+def edit_engine(request, pk):
+	engine = get_object_or_404(Engine, pk=pk)
+	if request.method == "POST":
+		form = EngineForm(request.POST, instance=engine)
+		if form.is_valid():
+			engine = form.save(commit=False)
+			engine.save()
+			return redirect('engine_detail.html', pk=engine.pk)
+	else:
+		form = EngineForm(instance=engine)
+	return render(request, 'engine_form.html', {'form': form})
+
+
+
+def edit_client(request, pk):
+	client = get_object_or_404(Client, pk=pk)
+	if request.method == "POST":
+		form = ClientForm(request.POST, instance=client)
+		if form.is_valid():
+			client = form.save(commit=False)
+			client.save()
+			return redirect('engine_detail.html', pk=client.pk)
+	else:
+		form = ClientForm(instance=client)
+	return render(request, 'engine_form.html', {'form': form})
+
+
+
+def edit_filequery(request, pk):
+	file_query = get_object_or_404(FileQuery, pk=pk)
+	if request.method == "POST":
+		form = FileQueryForm(request.POST, instance=file_query)
+		if form.is_valid():
+			file_query = form.save(commit=False)
+			file_query.save()
+			return redirect('engine_detail.html', pk=file_query.pk)
+	else:
+		form = FileQueryForm(instance=file_query)
+	return render(request, 'engine_form.html', {'form': form})
 

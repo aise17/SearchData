@@ -2,6 +2,7 @@ from django.forms import ModelForm
 from webInfo.models import Engine, Client, FileResults, FileQuery
 
 
+
 class ClientForm(ModelForm):
     class Meta:
         model = Client
@@ -25,8 +26,4 @@ class FileResultsForm(ModelForm):
         model = FileResults
         fields = '__all__'
         
-
-
-
-
 

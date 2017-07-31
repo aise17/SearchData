@@ -19,6 +19,11 @@ from webInfo.views import engine_list, cliet_list, file_query_list, file_results
 from webInfo.views import get_engine, get_client, get_file_query, get_file_result
 from webInfo.views import delete_client, delete_engine, delete_filequery, delete_fileresult
 from webInfo.views import  engine_detail, client_detail, filequery_detail, fileresult_detail
+from webInfo.views import  edit_engine, edit_client, edit_filequery
+
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -49,4 +54,8 @@ urlpatterns = [
     url(r'^delete_fileresult/(?P<pk>\d+)/$', delete_fileresult, name = 'delete_fileresult'),
 
 
-]
+    url(r'^edit_engine/(?P<pk>\d+)/$', edit_engine, name = 'edit_engine'),
+    url(r'^edit_client/(?P<pk>\d+)/$', edit_client, name = 'edit_client'),
+    url(r'^edit_filequery/(?P<pk>\d+)/$', edit_filequery, name = 'edit_filequery'),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

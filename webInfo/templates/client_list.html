@@ -30,8 +30,8 @@
       <td>{{ client.company }}</a></td>
       <td>{{client.mail}}</td></a>
       <td>{{client.contact_number}}</td></a>
-      <td><a href="#" class="btn btn-primary">detail</a></td>
-      <td><a href="#" class="btn btn-primary">edit</a></td>
+      <td><a href="/client_detail/{{client.pk}}" class="btn btn-primary">detail</a></td>
+      <td><a href="/edit_client/{{client.pk}}" class="btn btn-primary">edit</a></td>
       <td><a href="/delete_client/{{client.pk}}" class="btn btn-primary">delte</a></td>
     </tr>
 

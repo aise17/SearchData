@@ -1,0 +1,40 @@
+
+
+
+{% extends 'base.html' %}
+
+{%block filequery_detail%}
+
+
+ {% if filequery_detail %}
+
+
+<div class="card" style="width: 20rem;">
+  <div class="card-block">
+    <h4 class="card-title">{{filequery_detail.name}}</h4>
+    <p class="card-text">descripcion del File Query {{filequery_detail.pk}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{filequery_detail.name}}</li>
+    <li class="list-group-item">{{filequery_detail.engine}}</li>
+    <li class="list-group-item">{{filequery_detail.file_style}}</li>
+    <li class="list-group-item">{{filequery_detail.file}}</li>
+
+  </ul>
+  <div class="card-block">
+    <a href="/edit_filequery/{{filequery_detail.pk}}" class="btn btn-primary">edit</a>
+    <a href="/delete_filequery/{{filequery_detail.pk}}" class="btn btn-primary">delte</a>
+  </div>
+</div>
+
+
+
+ {%else%}
+
+<p>no hay resultados</p>
+
+{%endif%}
+
+{% endblock %}
+
+

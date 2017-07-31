@@ -25,7 +25,8 @@ SECRET_KEY = 'dtz*tdh$o1p2=)6sqgi2ogb&h^1$$s2r*(4#atf7ku_x@sdte-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -52,7 +53,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mySite.urls'
 
-MEDIA_ROOT = 'files/media'
+MEDIA_ROOT = '/home/sergio/searchdata_env/mySite/files/media'
+MEDIA_URL = '/files/media/'
 
 TEMPLATES = [
     {

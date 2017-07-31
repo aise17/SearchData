@@ -1,4 +1,4 @@
-000
+
 {% extends 'base.html'%}
 
 {%block engine%}
@@ -28,7 +28,7 @@
       <td>{{ engine.client }}</a></td>
       <td>{{engine.start_date}}</td></a>
       <td><a href="/engine_detail/{{engine.pk}}" class="btn btn-primary">detail</a></td>
-      <td><a href="#" class="btn btn-primary">edit</a></td>
+      <td><a href="/edit_engine/{{engine.pk}}" class="btn btn-primary">edit</a></td>
       <td><a href="/delete_engine/{{engine.pk}}" class="btn btn-primary">delte</a></td>
     </tr>
 
