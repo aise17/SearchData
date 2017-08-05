@@ -12,16 +12,17 @@
 <div class="card" style="width: 20rem;">
   <div class="card-block">
     <h4 class="card-title">{{client_detail.name}}</h4>
-    <p class="card-text">descripcion del Client {{client_detail.pk}}</p>
+    <p class="card-text">Descripcion del Client {{client_detail.pk}}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{client_detail.name}}</li>
-    <li class="list-group-item">{{client_detail.company}}</li>
-    <li class="list-group-item">{{client_detail.passwoerd}}</li>
-    <li class="list-group-item">{{client_detail.mail}}</li>
-    <li class="list-group-item">{{client_detail.n_targeta}}</li>
-    <li class="list-group-item">{{client_detail.n_secret}}</li>
-    <li class="list-group-item">{{client_detail.contact_number}}</li>
+    <li class="list-group-item"> Nombre: {{client_detail.name}}</li>
+    <li class="list-group-item">Empresa: {{client_detail.company}}</li>
+    <li class="list-group-item">Contraseña: {{client_detail.password}}</li>
+    <li class="list-group-item">E-mail: {{client_detail.mail}}</li>
+    <li class="list-group-item">Nº Targeta: {{client_detail.n_targeta}}</li>
+    <li class="list-group-item">Nº Secreto: {{client_detail.n_secret}}</li>
+    <li class="list-group-item">Telefono: {{client_detail.contact_number}}</li>
+    <li class="list-group-item">Telefono: {{client_detail.create_date}}</li>
   </ul>
   <div class="card-block">
     <a href="/edit_client/{{client_detail.pk}}" class="btn btn-primary">edit</a>
@@ -31,11 +32,19 @@
 
 
 
- {%else%}
+<canvas id="myChart" width="250" height="250"></canvas>
 
-<p>no hay resultados</p>
+
+
+
+
 
 {%endif%}
+
+
+
+
+
 
 {% endblock %}
 

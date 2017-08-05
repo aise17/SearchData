@@ -16,14 +16,17 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from webInfo.views import engine_list, cliet_list, file_query_list, file_results_list
-from webInfo.views import get_engine, get_client, get_file_query, get_file_result
+from webInfo.views import get_engine, get_client, get_file_query, get_file_result, superuser
 from webInfo.views import delete_client, delete_engine, delete_filequery, delete_fileresult
 from webInfo.views import  engine_detail, client_detail, filequery_detail, fileresult_detail
-from webInfo.views import  edit_engine, edit_client, edit_filequery
+from webInfo.views import  edit_engine, edit_client, edit_filequery, grph_client
 
 
 from django.conf import settings
 from django.conf.urls.static import static
+
+
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -57,5 +60,11 @@ urlpatterns = [
     url(r'^edit_engine/(?P<pk>\d+)/$', edit_engine, name = 'edit_engine'),
     url(r'^edit_client/(?P<pk>\d+)/$', edit_client, name = 'edit_client'),
     url(r'^edit_filequery/(?P<pk>\d+)/$', edit_filequery, name = 'edit_filequery'),
+    #----------------------------------------------------------------------------------------------------------------    
+    #registro de usuarios
+    url(r'^$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    url(r'^logout/', auth_views.logout, {'next_page': '/client'}, name='logout'),
+    url(r'^register/', superuser, name = 'superuser'),
+    url(r'^grph_client/(?P<pk>\d+)/$', grph_client, name = 'grph_client'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

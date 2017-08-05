@@ -13,11 +13,12 @@ from django.db import models
 class Client(models.Model):
 	name = models.CharField(max_length = 100, null= True)
 	company = models.CharField(max_length = 100, null= True)
-	passwoerd = models.CharField(max_length = 100, null= True)
+	password = models.CharField(max_length = 100, null= True)
 	mail = models.EmailField()
 	n_targeta = models.PositiveIntegerField()
 	n_secret = models.PositiveSmallIntegerField()
 	contact_number = models.PositiveIntegerField()
+	create_date = models.DateField(auto_now = True, editable = False)
 
 
 	def __unicode__(self):
@@ -28,7 +29,7 @@ class Client(models.Model):
 class Engine (models.Model):
 	name = models.CharField(max_length = 100, null= True)
 	client = models.ForeignKey(Client, on_delete = models.CASCADE)
-	start_date = models.DateField(auto_now = True, editable = False)
+	create_date = models.DateField(auto_now = True, editable = False)
 
 	def __unicode__(self):
 		return self.name
@@ -39,6 +40,7 @@ class FileQuery(models.Model):
 	engine = models.ForeignKey(Engine, on_delete = models.CASCADE)
 	file_style = models.CharField(max_length = 100)
 	file = models.FileField(upload_to = 'Query_csv/' )
+	create_date = models.DateField(auto_now = True, editable = False)
 
 
 
@@ -52,6 +54,7 @@ class FileResults(models.Model):
 	engine = models.ForeignKey(Engine, on_delete = models.CASCADE)
 	file_style = models.CharField(max_length = 100)
 	file = models.FileField(upload_to= 'Results_csv/%Y/%m')
+	create_date = models.DateField(auto_now = True, editable = False)
 
 	def __unicode__(self):
 		return self.name
